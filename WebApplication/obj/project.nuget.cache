@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "4Gxj6L5jQz2MD7LCKIe9aRAbsyeUAVStatWSPOtaZBq8F+x5gWP8iNa5EKvBkr610ksduRsDeKPDj5oEfbLUeQ==",
+  "success": true,
+  "projectFilePath": "/home/amit/Desktop/Work-DIR/GIT-TESTING/Jenkins-.NET-Core-CI-CD-pipeline-dev/WebApplication/WebApplication.csproj",
+  "expectedPackageFiles": [
+    "/home/amit/.nuget/packages/microsoft.netcore.app.ref/3.1.0/microsoft.netcore.app.ref.3.1.0.nupkg.sha512",
+    "/home/amit/.nuget/packages/microsoft.aspnetcore.app.ref/3.1.10/microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
+    "/home/amit/.nuget/packages/microsoft.netcore.app.host.linux-x64/3.1.22/microsoft.netcore.app.host.linux-x64.3.1.22.nupkg.sha512"
+  ],
+  "logs": []
+}
