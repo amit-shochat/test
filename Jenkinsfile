@@ -26,12 +26,12 @@ pipeline {
          }
         stage('Test: Unit Test'){
            steps {
-                sh 'dotnet test XUnitTestProject/XUnitTestProject.csproj '
+                sh 'dotnet test XUnitTestProject/XUnitTestProject.csproj --configuration Release --no-restore '
              }
           }
         stage('Publish'){
              steps{
-               sh 'dotnet publish WebApplication/WebApplication.csproj'
+               sh 'dotnet publish WebApplication/WebApplication.csproj --configuration Release --no-restore'
              }
         }
         stage('Deploy'){
