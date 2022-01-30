@@ -26,7 +26,7 @@ pipeline {
          }
         stage('Test: Unit Test'){
            steps {
-                sh 'dotnet test XUnitTestProject/XUnitTestProject.csproj --configuration Release --no-restore'
+                sh 'dotnet test XUnitTestProject/XUnitTestProject.csproj '
              }
           }
         stage('Publish'){
