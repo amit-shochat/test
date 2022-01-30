@@ -6,7 +6,7 @@ pipeline {
         }
     }
      environment {
-            CI = 'true'
+            HOME = '/tmp'
         }
     stages {
         stage('Restore packages'){
