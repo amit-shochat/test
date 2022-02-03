@@ -15,8 +15,36 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
+- task: UseDotNet@2
+  displayName: 'Install .NET Core SDK'
+  inputs:
+    version: 3.1.402
+    performMultiLevelLookup: true
+    includePreviewVersions: true # Required for preview versions
+
 - task: DotNetCoreCLI@2
   inputs:
     command: 'restore'
     projects: './WebApplication.sln'
     feedsToUse: 'select'
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'build'
+    projects: './WebApplication.sln'
+    arguments: '--configuration $(buildConfiguration)'
+  displayName: 'dotnet build $(buildConfiguration)'
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'test'
+    projects: 'XUnitTestProject/XUnitTestProject.csproj'
+    arguments: '--configuration $(buildConfiguration) --no-restore'
+  displayName: 'dotnet test $(buildConfiguration)'
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'publish'
+    publishWebProjects: false
+    projects: 'WebApplication/WebApplication.csproj'
+    arguments: '--configuration $(buildConfiguration) --no-restore'
+  displayName: 'dotnet publish $(buildConfiguration)'
